@@ -1,0 +1,770 @@
+// Colors
+$color-darkgrey: #181818;
+
+#drawer-panel {
+  background: transparent !important;
+
+  &.new-playlist-drawer {
+    #main {
+      background: transparent !important;
+
+      #mainPanel {
+        background: transparent !important;
+
+        #mainContainer {
+          background: transparent !important;
+
+          &.paper-header-panel {
+            background: rgba($color-darkgrey, .5) !important;
+          }
+
+          #music-content {
+
+            .material-container,
+            .material-playlist-container,
+            .songlist-container,
+            .material-detail-view .top-tracks,
+            .station-container-content-wrapper .material-album-container,
+            #queue-overlay {
+              background: $color-darkgrey !important;
+              box-shadow: none;
+            }
+
+            .song-table {
+              .song-row {
+                background: $color-darkgrey !important;
+
+                td {
+                  color: #707070 !important;
+
+                  &[data-col="track"] {
+                    padding-left: 0 !important;
+                  }                  
+                }
+
+                &.currently-playing {
+                  td {
+                    background: #000 !important;
+                  }
+                }
+              }
+
+              th,
+              td,
+              tr {
+                background: $color-darkgrey !important;
+              }
+            }
+          } // #music-content
+        }
+      }
+    }
+  }
+
+  #main {
+    background: $color-darkgrey !important;
+
+    #mainPanel {
+      background: $color-darkgrey !important;
+
+      #mainContainer {
+        background: $color-darkgrey !important;
+
+        &.paper-header-panel {
+          background: $color-darkgrey !important;
+        }
+      }
+    }
+  }
+}
+
+// Drawer menu
+#drawer {
+  background: #121212;
+  width: 240px !important;
+  box-shadow: none !important;
+  border-right: 0 !important;
+
+  #mainContainer {
+    background: #121212 !important;
+  }
+
+  #topBar {
+    box-shadow: none !important;
+    border-right: 0 !important;
+  }
+
+  #nav {
+    background: #121212 !important;
+    box-shadow: none !important;
+    border-right: 0 !important;
+
+    .nav-toolbar {
+      box-shadow: none !important;
+      border-right: 0 !important;
+    }
+
+    .nav-section {
+      background: #121212 !important;
+      box-shadow: none !important;
+      border-right: 0 !important;
+    }
+  }
+}
+
+// Top bar
+#topBar {
+  background: #222326 !important;
+  color: #fff;
+}
+
+paper-button#unsubscribe-playlist-button {
+  .playlist-subscribed,
+  &:hover .playlist-unsubscribe {
+    color: #fff !important;
+  }
+
+  iron-icon {
+    &[icon="sj:unsubscribe"] path:last-child {
+      fill: #fff;
+    }
+
+    &[icon="sj:subscribed"] path {
+      fill: #fff;
+
+      &:last-child {
+        stroke: #fff;
+      }
+
+      &:first-child,
+      &:last-child {
+        fill: transparent;
+      }
+    }
+  }
+}
+
+.material {
+  background: $color-darkgrey !important;
+
+  .section-header,
+  .recommended-header,
+  .cluster .cluster-title {
+    color: #ddd;
+  }
+
+  .cluster {
+    .header-inner {
+      margin-left: 0;
+    }
+
+    paper-button,
+    .paper-button-1 {
+      margin: 0 !important;
+    }
+  }
+
+  .cluster-text-protection {
+    background-color: transparent !important;
+
+    &::before {
+      background-color: transparent !important;
+    }
+  }
+
+  .nav-section-header {
+    padding-left: 16px;
+    font-weight: 300;
+    color: #777;
+    text-shadow: 0 -1px 0 #222;
+    text-transform: uppercase;
+    height: 34px;
+    line-height: 34px;
+  }
+
+  #nav_collections .nav-item-container,
+  .nav-item-container {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    color: #949599 !important;
+    padding: 0;
+    border-left: 3px solid transparent;
+  }
+
+  #nav_collections .nav-item-container.selected {
+    background: #2e2f33 !important;
+    color: #f7f9ff !important;
+    border-left: 3px solid #ff7d00;
+  }
+
+  .nav-item-container.selected {
+    background: #2e2f33 !important;
+    color: #f7f9ff !important;
+    border-left: 3px solid #ff7d00;
+
+    &:focus,
+    &:hover {
+      background: #2e2f33 !important;
+      color: #f7f9ff !important;
+      border-left: 3px solid #ff7d00;
+    }
+  }
+
+  #nav_collections .nav-item-container:hover,
+  .nav-item-container:hover {
+    background: #2e2f33 !important;
+    color: #f7f9ff !important;
+  }
+
+  .goog-menu {
+    .goog-menuseparator {
+      background-color: #2a2a2a !important;
+    }
+
+    .goog-menuitem {
+      .rating-container paper-icon-button {
+        color: #fff;
+      }
+
+      &:hover {
+        background: #3e3e40;
+        color: #fafafa !important;
+      }
+
+      .goog-menuitem-content {
+        color: #888 !important;
+      }
+    }
+
+    .goog-menuheader {
+      color: #aaa !important;
+    }
+  }
+} // .material
+
+#loading-progress {
+  background: $color-darkgrey;
+}
+
+#loading-progress-content {
+  top: 40%;
+}
+
+#loading-progress-message {
+  color: #ddd;
+  text-align: center;
+}
+
+#loading-progress-bar {
+  height: 3px;
+  background-color: #000;
+  border: 0;
+}
+
+#current-loading-progress {
+  height: 3px;
+}
+
+a,
+.simple-dialog a {
+  color: #999;
+}
+
+.card-group {
+  height: 520 !important;
+}
+
+// Card layout
+.material-card {
+  background-color: rgba(34, 35, 38, .8) !important;
+
+  // Disable default box-shadows
+  box-shadow: none;
+
+  &:hover,
+  &:focus {
+    background-color: rgba(#555, 1) !important;
+    box-shadow: none !important;
+
+    * {
+      &:after,
+      &:before {
+        box-shadow: none !important;
+        background: none !important;
+      }
+    }
+  }
+
+  .details .menu-anchor,
+  &[data-size="small"][data-type="imfl"] .title {
+    color: #fff;
+  }
+
+  .details {
+    box-shadow: none;
+    padding: 16px;
+    position: relative;
+    background-color: rgba(34, 35, 38, .8) !important;
+
+    paper-icon-button.menu-anchor {
+      color: #fff !important;
+    }
+  }
+
+  .title {
+    color: #ddd;
+  }
+
+  .sub-title {
+    color: #999;
+  }
+
+  .reason {
+    border-top-color: transparent;
+  }
+
+  &.entity-card {
+    background-color: transparent !important;
+
+    .details {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.settings-card {
+  box-shadow: none;
+  background-color: rgba(34, 35, 38, .8) !important;
+}
+
+.cluster.material-cluster .header h2.title,
+.settings-cluster.material-cluster .header h2.title,
+.section-header {
+  color: #ddd;
+}
+
+#music-content .material-banner.banner {
+  &.ws-search-banner,
+  &.new-user-quiz-card,
+  &.ws-subscriber-card {
+    background-color: rgba(34, 35, 38, .8);
+  }
+
+  &.ws-search-banner .title,
+  &.new-user-quiz-card .title,
+  &.ws-subscriber-card .title {
+    color: #ccc;
+  }
+}
+
+#nav,
+#nav-container,
+.material .nav-toolbar {
+  background-color: $color-darkgrey !important;
+  border-right: 1px solid #292929;
+}
+
+#nav-container #dropShadow {
+  display: none;
+}
+
+#nav_collections .nav-item-container:focus {
+  background-color: transparent;
+}
+
+.nav-item-container {
+  &:focus,
+  &:hover {
+    background-color: transparent;
+  }
+
+  .playlistDropDown,
+  &.selected .playlistDropDown {
+    margin-top: 3px !important;
+  }
+}
+
+.nav-section-divider {
+  display: none;
+}
+
+.nav-bar {
+  background-color: #121314;
+
+  .header-tab-title {
+    height: 42px;
+    line-height: 45px;
+    color: #aaa;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-bottom: 3px solid transparent;
+    transition: all .4s ease;
+
+    &.selected {
+      border-bottom: 3px solid #ff7d00 !important;
+      background-color: transparent;
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  .header-tab-spacer {
+    display: none;
+  }
+
+  #breadcrumbs {
+    background: none;
+  }
+}
+
+#headerBar {
+  background-color: #121314;
+  border-bottom: 1px solid $color-darkgrey;
+}
+
+.read-more-button-wrapper.fade-out {
+  background: #121314;
+}
+
+.fade-out:after {
+  background: linear-gradient(to right, rgba(34, 35, 38, 0), rgba(34, 35, 38, 1)) !important;
+}
+
+#player {
+  background: $color-darkgrey;
+  color: #fff;
+  box-shadow: none !important;
+
+  &.active:hover .playing-progress-background {
+    background: #555;
+  }
+
+  .flat-button {
+    background-color: transparent !important;
+
+    &:hover,
+    &:active {
+      background-color: transparent !important;
+    }
+  }
+
+  &:not(.material) [data-id="now-playing-menu"] {
+    border: 0;
+  }
+
+  &.material {
+    .player-rating-container {
+      background-color: transparent;
+    }
+
+    .now-playing-actions paper-icon-button {
+      color: #fff;
+    }
+  }
+}
+
+.player-middle {
+  background: $color-darkgrey;
+  color: #fff;
+  padding: 3px 0 0;
+  margin: 0;
+}
+
+#playerSongInfo {
+  overflow: hidden;
+
+  .text-wrapper #playerSongTitle {
+    margin-right: 110px;
+  }
+}
+
+.now-playing-menu-wrapper {
+  background: none;
+}
+
+#playerSongTitle {
+  color: #ddd;
+}
+
+#player-artist,
+.player-album,
+.player-dash {
+  color: #aaa;
+}
+
+#top_divider_line,
+.playing-progress-background {
+  background: #333;
+}
+
+#time_container_duration {
+  color: #ccc;
+  background-color: #555;
+}
+
+#volume {
+  &:hover,
+  &.simulated-hover {
+    background: none !important;
+  }
+
+  #vslider,
+  #volume_low,
+  #volume_high {
+    opacity: 1 !important;
+  }
+}
+
+.suggested-query {
+  color: #666;
+}
+
+.more-songs-container {
+  border-top-color: transparent;
+}
+
+
+div.simple-dialog-bg {
+  opacity: .01 !important;
+  background-color: transparent;
+}
+
+.simple-dialog {
+  animation-duration: .8s;
+  animation-name: slidedown;
+  animation-timing-function: ease-out;
+  overflow: hidden;
+  top: 60 !important;
+  border-radius: 0 0 5px 5px;
+  border-top-width: 0;
+  background-color: rgba(240, 240, 240, .98);
+}
+
+@keyframes slidedown {
+  from {
+    max-height: 0%;
+  }
+
+  to {
+    max-height: 100%;
+  }
+}
+
+.simple-dialog-title,
+.simple-dialog-content {
+  background-color: transparent;
+}
+
+.simple-dialog-title {
+  color: #444 !important;
+}
+
+.butter-bar-container {
+  top: 0;
+}
+
+#loadingOverlay {
+  filter: invert(80%);
+  opacity: .8 !important;
+}
+
+.sort-icon {
+  filter: brightness(-20%);
+}
+
+.now-playing-menu {
+  .goog-menuitem {
+    background: #2e2f33;
+  }
+
+  .goog-submenu {
+    background: #2e2f33;
+
+    .goog-submenu-arrow {
+      background: #2e2f33;
+    }
+  }
+}
+
+.goog-menuitem,
+.goog-menu {
+  background: #2e2f33;
+}
+
+::-webkit-scrollbar {
+  background-color: $color-darkgrey;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #000;
+  border: .25em solid $color-darkgrey;
+}
+
+// Fill to highlight thumbed up/down track in status bar
+paper-icon-button {
+  &[aria-label="Undo thumb-up"] iron-icon {
+    display: inline-block;
+  }
+
+  &[aria-label="Undo thumb-down"] iron-icon {
+    display: inline-block;
+  }
+}
+
+// New drawer / other additions
+[class*="sj-play-button"] {
+  #pulse {
+    background-color: rgba(255, 87, 34, .4) !important;
+  }
+
+  #buttonContent {
+    background: #ff5722 !important;
+  }
+}
+
+.primary:not([style-scope]):not(.style-scope) {
+  color: #ff5722 !important;
+}
+
+#music-content .info-card {
+  background: $color-darkgrey !important;
+
+  * {
+    color: rgb(193, 193, 193) !important;
+  }
+}
+
+#playlist-drawer {
+  .autoplaylist-section,
+  #recent-playlists-container,
+  paper-header-panel[at-top] paper-toolbar:not([style-scope]):not(.style-scope) {
+    border-color: #333439 !important;
+  }
+
+  .playlist-drawer-item {
+    .playlist-wrapper {
+      &:hover,
+      &:focus {
+        background-color: #2e2f33 !important;
+        color: #fff !important;
+      }
+    }
+
+    sj-play-button:hover ~ .playlist-wrapper,
+    iron-icon:hover ~ .playlist-wrapper,
+    &.playlist-drop-target:not(.subscribed) .playlist-wrapper {
+      background-color: #2e2f33 !important;
+      color: #fff !important;
+    }
+  }
+
+  .sj-right-drawer {
+    background: $color-darkgrey !important;
+
+    .sj-right-drawer #dropShadow {
+      display: none;
+    }
+
+    #topBar {
+      background: $color-darkgrey !important;
+    }
+  }
+}
+
+.share-buttons .button-label,
+#checkboxLabel,
+#playlist-drawer .sj-right-drawer #topBar {
+  color: #fff !important;
+}
+
+.column .material-card[data-size="small"][data-type="imfl"] .title {
+  color: #c2c2c2 !important;
+}
+
+[class*="paper-dialog"] {
+  color: #fff !important;
+  background: $color-darkgrey !important;
+
+  [class*="paper-input-container"] .input-content {
+    &.paper-input-container {
+      input,
+      textarea {
+        color: #fff !important;
+      }
+
+      .paper-input-input {
+        color: #fff !important;
+      }
+    }
+
+    &:not(.label-is-highlighted).paper-input-container {
+      label,
+      .paper-input-label [class*="paper-dialog"] [class*="paper-input-container"] .input-content.paper-input-container iron-autogrow-textarea {
+        color: #fff !important;
+      }
+    }
+  }
+}
+
+paper-dialog {
+  input::selection,
+  textarea::selection {
+    background-color: rgba(255, 87, 34, .25) !important;
+  }
+}
+
+[class*="paper-button"][disabled],
+[class*="paper-dialog-scrollable"].is-scrolled:not(:first-child)::before,
+paper-dialog-scrollable.can-scroll:not([style-scope]):not(.style-scope):not(.scrolled-to-bottom)::after {
+  background-color: #333439 !important;
+}
+
+.share-buttons,
+gpm-action-buttons,
+.my-devices-card .device-list-item:not(:last-child),
+.labs-card .lab-list-item:not(:last-child) {
+  border-color: #333439 !important;
+}
+
+.label-is-highlighted [id*="paper-input-label"],
+[class*="paper-input-container"] .add-on-content.is-highlighted.paper-input-container * {
+  color: #ff5722 !important;
+}
+
+.ups,
+.focused-line {
+  background: #ff5722 !important;
+}
+
+.ups.light {
+  background: transparent !important;
+}
+
+paper-button.nav-item-container.sub {
+  padding: 6px !important;
+}
+
+.ups paper-button,
+.ad-preroll-message-link paper-button,
+paper-button.nav-item-container.sub {
+  background-color: #2e2f33 !important;
+}
+
+.ups paper-button:focus,
+.ad-preroll-message-link paper-button:focus,
+paper-button.nav-item-container.sub:focus {
+  background-color: #202023 !important;
+  border: 1px solid #2e2f33 !important;
+}
+
+.share-buttons .share-button iron-icon {
+  z-index: 0 !important;
+}
