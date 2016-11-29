@@ -29,32 +29,6 @@ $color-darkgrey: #181818;
               background: $color-darkgrey !important;
               box-shadow: none;
             }
-
-            .song-table {
-              .song-row {
-                background: $color-darkgrey !important;
-
-                td {
-                  color: #707070 !important;
-
-                  &[data-col="track"] {
-                    padding-left: 0 !important;
-                  }                  
-                }
-
-                &.currently-playing {
-                  td {
-                    background: #000 !important;
-                  }
-                }
-              }
-
-              th,
-              td,
-              tr {
-                background: $color-darkgrey !important;
-              }
-            }
           } // #music-content
         }
       }
