@@ -128,10 +128,6 @@ paper-button#unsubscribe-playlist-button {
 
 .material {
 
-  &#music-content {
-    background: $color-darker;
-  }
-
   .section-header,
   .recommended-header,
   .cluster .cluster-title {
@@ -466,6 +462,19 @@ a,
 
 .fade-out:after {
   background: linear-gradient(to right, rgba(34, 35, 38, 0), rgba(34, 35, 38, 1)) !important;
+}
+
+// Player
+[class*="sj-play-button"] #pulse {
+  background-color: rgba(255, 87, 34, 0.4) !important;
+}
+
+[class*="sj-play-button"] #buttonContent {
+  background: #ff5722 !important;
+}
+
+.primary:not([style-scope]):not(.style-scope) {
+  color: #ff5722 !important;
 }
 
 #player {
