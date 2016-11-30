@@ -40,7 +40,7 @@ gulp.task('browsersync', function() {
   ];
 
   browserSync.init(files, {
-    proxy: "default.dev/gpmdp-dark-theme/tests/",
+    proxy: "gpmdp.dev/tests/",
     browser: "Google Chrome",
     notify: true
   });

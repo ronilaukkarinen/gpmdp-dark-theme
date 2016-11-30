@@ -1,5 +1,13 @@
 // Colors
+$color-grey: #222326;
 $color-darkgrey: #181818;
+$color-darker: #121314;
+
+body {
+  &.qp {
+    background-color: $color-darker !important;
+  }
+}
 
 #drawer-panel {
   background: transparent !important;
@@ -119,7 +127,10 @@ paper-button#unsubscribe-playlist-button {
 }
 
 .material {
-  background: $color-darkgrey !important;
+
+  &#music-content {
+    background: $color-darker;
+  }
 
   .section-header,
   .recommended-header,
@@ -212,6 +223,51 @@ paper-button#unsubscribe-playlist-button {
 
     .goog-menuheader {
       color: #aaa !important;
+    }
+  }
+
+  .material-detail-view .artist-details .bio-wrapper .bio {
+    color: #ddd;
+  }
+
+  .material-detail-view .material-container-details .info .description {
+    color: #a1a1a1;
+  }
+
+  .song-table {
+    padding: 0;
+
+    .header-row th {
+      background: transparent !important;
+      border-bottom: 1px solid #222326;
+      height: 26px;
+      text-transform: none;
+      color: #888 !important;
+      border-left: 0 solid #555;
+    }
+
+    .song-row {
+      .song-indicator {
+        filter: invert(100%);
+        background-color: transparent !important;
+      }
+
+      &.hover,
+      &:hover,
+      &:focus {
+        td {
+          background-color: #222326 !important;
+        }
+      }
+
+      td {
+        border: 0;
+        color: #fff;
+        font-weight: 300;
+        cursor: default;
+        background-color: transparent !important;
+        border-bottom: 1px solid #222326;
+      }
     }
   }
 } // .material
@@ -413,7 +469,7 @@ a,
 }
 
 #player {
-  background: $color-darkgrey;
+  background: $color-grey;
   color: #fff;
   box-shadow: none !important;
 
@@ -741,4 +797,14 @@ paper-button.nav-item-container.sub:focus {
 
 .share-buttons .share-button iron-icon {
   z-index: 0 !important;
+}
+
+// From spotify-black.css (radiant-player-mac)
+
+.material-album-container.material-container,
+.material-detail-view .artist-details,
+.material-container-details,
+.material-container-details .info {
+  background-color: rgba(18, 19, 20, .8) !important;
+  color: #fff;
 }
