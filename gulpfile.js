@@ -13,6 +13,7 @@ var util        = require('gulp-util');
 var header      = require('gulp-header');
 var pixrem      = require('gulp-pixrem');
 var exec        = require('child_process').exec;
+var rename      = require('gulp-rename');
 
 // Files
 var styles = 'src/black.scss';
@@ -75,9 +76,19 @@ gulp.task('styles', function() {
       keepBreaks: false,
       keepSpecialComments: 0,
       mediaMerging: true,
-      sourceMap: true
+      sourceMap: false,
+      debug: true
+    }, function(details) {
+        console.log('[clean-css] Original size: ' + details.stats.originalSize + ' bytes');
+        console.log('[clean-css] Minified size: ' + details.stats.minifiedSize + ' bytes');
+        console.log('[clean-css] Time spent on minification: ' + details.stats.timeSpent + ' ms');
+        console.log('[clean-css] Compression efficiency: ' + details.stats.efficiency * 100 + ' %');
     }))
     .pipe(gulp.dest('./'))
+    .pipe(rename('spotify-black.css'))
+
+    // Also update Radiant Player CSS:
+    .pipe(gulp.dest('/Applications/Radiant Player.app/Contents/Resources/css/'))
     .pipe(browserSync.stream());
 
 });

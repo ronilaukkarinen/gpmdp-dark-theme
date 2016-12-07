@@ -1,426 +1,480 @@
-// Colors
-$color-grey: #222326;
-$color-darkgrey: #181818;
+// Based on radiant-player-mac/css/spotify-black.css by Anthony Barone.
+// The MIT License (MIT)
+// Copyright (c) 2016 Sajid Anwar
+//
+// Custom stylesheet that emulates the appearance of the Spotify black redesign.
+// Originally created by Anthony Barone.
+// Sassified, linted and improved by Roni Laukkarinen.
+
+$color-darkest: #000;
+$color-dark: #131214;
 $color-darker: #121314;
+$color-darkalt: #222326;
+$color-darksteady: #222;
+$color-darksteadyalt: #292929;
+$color-darkbetween: #2a2a2a;
+$color-darkhover: #27282b;
+$color-semidark: #3e3e40;
+$color-darkgrey: #555;
+$color-fog: #999;
+$color-middleground: #888;
+$color-grey: #bbb;
+$color-greydark: #aaa;
+$color-lightrey: #ddd;
+$color-almostwhite: #fafafa;
+$color-lightest: #fff;
+$color-hilight: #ff8200;
 
 body {
-  &.qp {
-    background-color: $color-darker !important;
+  // General
+  paper-header-panel {
+    &#content-container {
+      paper-toolbar {
+        &#material-app-bar {
+          border-bottom: 0 !important;
+        }
+      }
+    }
   }
-}
 
-#drawer-panel {
-  background: transparent !important;
+  &.material,
+  #material-app-bar,
+  #music-content.material .material-cover {
+    background-color: $color-darker;
+    color: $color-grey;
+  }
 
-  &.new-playlist-drawer {
-    #main {
-      background: transparent !important;
+  .recent-view h2#gridTitle {
+    color: $color-darkgrey;
+  }
 
-      #mainPanel {
-        background: transparent !important;
+  #material-app-bar,
+  paper-button#unsubscribe-playlist-button .playlist-subscribed,
+  paper-button#unsubscribe-playlist-button:hover .playlist-unsubscribe {
+    color: $color-lightest !important;
+  }
 
-        #mainContainer {
-          background: transparent !important;
-
-          &.paper-header-panel {
-            background: rgba($color-darkgrey, .5) !important;
+  // Playlists
+  paper-button {
+    &#unsubscribe-playlist-button {
+      iron-icon {
+        &[icon="sj:unsubscribe"] {
+          path:last-child {
+            fill: $color-lightest;
           }
+        }
 
-          #music-content {
+        &[icon="sj:subscribed"] {
+          path {
+            fill: $color-lightest;
 
-            .material-container,
-            .material-playlist-container,
-            .songlist-container,
-            .material-detail-view .top-tracks,
-            .station-container-content-wrapper .material-album-container,
-            #queue-overlay {
-              background: $color-darkgrey !important;
-              box-shadow: none;
+            &:last-child {
+              stroke: $color-lightest;
+              fill: transparent;
             }
-          } // #music-content
+          }
+        }
+
+        path {
+          fill: $color-lightest;
+        }
+      }
+
+      // iron-icon
+    }
+  }
+
+  // Main app
+  .material {
+    .cluster-text-protection,
+    .cluster-text-protection::before {
+      background-color: $color-darker !important;
+      padding-top: 1px;
+      padding-bottom: 1px;
+    }
+
+    .section-header,
+    .recommended-header,
+    .cluster .cluster-title {
+      color: $color-lightrey;
+    }
+
+    // Song table
+    .song-table {
+      padding: 0;
+    }
+
+    .goog-menu {
+
+      .goog-menuitem {
+        &:hover {
+          background: $color-semidark;
+
+          .goog-menuitem-content {
+            color: $color-almostwhite !important;
+          }
+        }
+
+        .goog-menuitem-content {
+          color: $color-middleground !important;
+        }
+
+        .goog-menuheader {
+          color: $color-greydark !important;
+        }
+
+        .goog-menuseparator {
+          background-color: $color-darkbetween !important;
+        }
+
+        .rating-container paper-icon-button {
+          color: $color-lightest;
         }
       }
     }
-  }
 
-  #main {
-    background: $color-darkgrey !important;
-
-    #mainPanel {
-      background: $color-darkgrey !important;
-
-      #mainContainer {
-        background: $color-darkgrey !important;
-
-        &.paper-header-panel {
-          background: $color-darkgrey !important;
-        }
-      }
-    }
-  }
-}
-
-// Drawer menu
-#drawer {
-  background: #121212;
-  width: 240px !important;
-  box-shadow: none !important;
-  border-right: 0 !important;
-
-  #mainContainer {
-    background: #121212 !important;
-  }
-
-  #topBar {
-    box-shadow: none !important;
-    border-right: 0 !important;
-  }
-
-  #nav {
-    background: #121212 !important;
-    box-shadow: none !important;
-    border-right: 0 !important;
-
-    .nav-toolbar {
-      box-shadow: none !important;
-      border-right: 0 !important;
+    .song-row [data-col="index"] .hover-button[data-id="play"],
+    .song-row [data-col="track"] .hover-button[data-id="play"] {
+      background-image: url('https://radiant-player-mac/sprites-inverted.png') !important;
     }
 
-    .nav-section {
-      background: #121212 !important;
-      box-shadow: none !important;
-      border-right: 0 !important;
-    }
-  }
-}
-
-// Top bar
-#topBar {
-  background: #222326 !important;
-  color: #fff;
-}
-
-paper-button#unsubscribe-playlist-button {
-  .playlist-subscribed,
-  &:hover .playlist-unsubscribe {
-    color: #fff !important;
-  }
-
-  iron-icon {
-    &[icon="sj:unsubscribe"] path:last-child {
-      fill: #fff;
+    .song-row .rating-container.thumbs [data-rating] {
+      filter: invert(100%);
     }
 
-    &[icon="sj:subscribed"] path {
-      fill: #fff;
-
-      &:last-child {
-        stroke: #fff;
-      }
-
-      &:first-child,
-      &:last-child {
-        fill: transparent;
-      }
-    }
-  }
-}
-
-.material {
-
-  .section-header,
-  .recommended-header,
-  .cluster .cluster-title {
-    color: #ddd;
-  }
-
-  .cluster {
-    .header-inner {
-      margin-left: 0;
-    }
-
-    paper-button,
-    .paper-button-1 {
-      margin: 0 !important;
-    }
-  }
-
-  .cluster-text-protection {
-    background-color: transparent !important;
-
-    &::before {
+    .song-row .column-content {
       background-color: transparent !important;
     }
-  }
 
-  .nav-section-header {
-    padding-left: 16px;
-    font-weight: 300;
-    color: #777;
-    text-shadow: 0 -1px 0 #222;
-    text-transform: uppercase;
-    height: 34px;
-    line-height: 34px;
-  }
-
-  #nav_collections .nav-item-container,
-  .nav-item-container {
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    color: #949599 !important;
-    padding: 0;
-    border-left: 3px solid transparent;
-  }
-
-  #nav_collections .nav-item-container.selected {
-    background: #2e2f33 !important;
-    color: #f7f9ff !important;
-    border-left: 3px solid #ff7d00;
-  }
-
-  .nav-item-container.selected {
-    background: #2e2f33 !important;
-    color: #f7f9ff !important;
-    border-left: 3px solid #ff7d00;
-
-    &:focus,
-    &:hover {
-      background: #2e2f33 !important;
-      color: #f7f9ff !important;
-      border-left: 3px solid #ff7d00;
+    .song-row:hover,
+    .song-row:hover td,
+    .song-row:hover .column-content {
+      background-color: $color-darkhover !important;
     }
-  }
+  } // .material
 
-  #nav_collections .nav-item-container:hover,
-  .nav-item-container:hover {
-    background: #2e2f33 !important;
-    color: #f7f9ff !important;
-  }
-
-  .goog-menu {
-    .goog-menuseparator {
-      background-color: #2a2a2a !important;
-    }
-
-    .goog-menuitem {
-      .rating-container paper-icon-button {
-        color: #fff;
-      }
-
-      &:hover {
-        background: #3e3e40;
-        color: #fafafa !important;
-      }
-
-      .goog-menuitem-content {
-        color: #888 !important;
+  // Just to make sure
+  &.qp {
+    .material {
+      .cluster-text-protection,
+      .cluster-text-protection::before {
+        background-color: $color-darker !important;
       }
     }
 
-    .goog-menuheader {
-      color: #aaa !important;
+    #material-app-bar #material-one-left .music-logo {
+      background-image: url('https://dl.dropboxusercontent.com/u/18447700/play_music.svg');
     }
   }
 
-  .material-detail-view .artist-details .bio-wrapper .bio {
-    color: #ddd;
+  // Links
+  a,
+  .simple-dialog a {
+    color: $color-fog;
   }
 
-  .material-detail-view .material-container-details .info .description {
-    color: #a1a1a1;
+  // Loaders
+  #loading-progress {
+    background: $color-darkalt;
   }
 
-  .song-table {
-    padding: 0;
+  #loading-progress-content {
+    top: 40%;
+  }
 
-    .header-row th {
-      background: transparent !important;
-      border-bottom: 1px solid #222326;
-      height: 26px;
-      text-transform: none;
-      color: #888 !important;
-      border-left: 0 solid #555;
+  #loading-progress-message {
+    color: $color-lightrey;
+    text-align: center;
+  }
+
+  #loading-progress-bar {
+    height: 3px;
+    background-color: $color-darkest;
+    border: 0;
+  }
+
+  #current-loading-progress {
+    height: 3px;
+  }
+
+  // Cards
+  .card-group {
+    height: 520px !important;
+  }
+
+  .material-card,
+  .material-card .details,
+  .settings-card {
+    background-color: rgba($color-darkalt, .8) !important;
+  }
+
+  .material-card {
+    .title {
+      color: $color-lightrey;
     }
 
-    .song-row {
-      .song-indicator {
-        filter: invert(100%);
+    .sub-title {
+      color: $color-fog;
+    }
+
+    .reason {
+      border-top-color: transparent;
+    }
+
+    &.entity-card {
+      background-color: transparent !important;
+
+      .details {
         background-color: transparent !important;
       }
-
-      &.hover,
-      &:hover,
-      &:focus {
-        td {
-          background-color: #222326 !important;
-        }
-      }
-
-      td {
-        border: 0;
-        color: #fff;
-        font-weight: 300;
-        cursor: default;
-        background-color: transparent !important;
-        border-bottom: 1px solid #222326;
-      }
     }
-  }
-} // .material
-
-#loading-progress {
-  background: $color-darkgrey;
-}
-
-#loading-progress-content {
-  top: 40%;
-}
-
-#loading-progress-message {
-  color: #ddd;
-  text-align: center;
-}
-
-#loading-progress-bar {
-  height: 3px;
-  background-color: #000;
-  border: 0;
-}
-
-#current-loading-progress {
-  height: 3px;
-}
-
-a,
-.simple-dialog a {
-  color: #999;
-}
-
-.card-group {
-  height: 520 !important;
-}
-
-// Card layout
-.material-card {
-  background-color: rgba(34, 35, 38, .8) !important;
-
-  // Disable default box-shadows
-  box-shadow: none;
-
-  &:hover,
-  &:focus {
-    background-color: rgba(#555, 1) !important;
-    box-shadow: none !important;
-
-    * {
-      &:after,
-      &:before {
-        box-shadow: none !important;
-        background: none !important;
-      }
-    }
-  }
-
-  .details .menu-anchor,
-  &[data-size="small"][data-type="imfl"] .title {
-    color: #fff;
-  }
-
-  .details {
-    box-shadow: none;
-    padding: 16px;
-    position: relative;
-    background-color: rgba(34, 35, 38, .8) !important;
-
-    paper-icon-button.menu-anchor {
-      color: #fff !important;
-    }
-  }
-
-  .title {
-    color: #ddd;
-  }
-
-  .sub-title {
-    color: #999;
-  }
-
-  .reason {
-    border-top-color: transparent;
-  }
-
-  &.entity-card {
-    background-color: transparent !important;
 
     .details {
-      background-color: transparent !important;
+      padding: 16px;
+      position: relative;
+
+      paper-icon-button.menu-anchor {
+        color: $color-lightest !important;
+      }
+    }
+  } // .material-card
+
+  .cluster {
+    &.material-cluster {
+      .header {
+        h2 {
+          &.title {
+            color: $color-lightrey;
+          }
+        }
+      }
     }
   }
-}
 
-.settings-card {
+  .settings-cluster {
+    &.material-cluster {
+      .header {
+        h2 {
+          &.title {
+            color: $color-lightrey;
+          }
+        }
+      }
+    }
+  }
+
+  // Music content
+  #music-content {
+    .material-banner.banner.ws-search-banner,
+    .material-banner.banner.new-user-quiz-card,
+    .material-banner.banner.ws-subscriber-card {
+      background-color: rgba($color-darkalt, .8);
+
+      .title {
+        color: #ccc;
+      }
+    }
+  } // #music-content
+} // body
+
+.material-container,
+.material-playlist-container,
+.songlist-container,
+.material-detail-view .top-tracks,
+.station-container-content-wrapper .material-album-container,
+#queue-overlay {
+  background-color: rgba($color-dark, .98);
   box-shadow: none;
-  background-color: rgba(34, 35, 38, .8) !important;
 }
 
-.cluster.material-cluster .header h2.title,
-.settings-cluster.material-cluster .header h2.title,
-.section-header {
-  color: #ddd;
+.station-container-content-wrapper .material-container-details {
+  background-color: transparent;
 }
 
-#music-content .material-banner.banner {
-  &.ws-search-banner,
-  &.new-user-quiz-card,
-  &.ws-subscriber-card {
-    background-color: rgba(34, 35, 38, .8);
-  }
+#queue-overlay::after {
+  border-color: transparent transparent rgba($color-dark, .98) rgba($color-dark, .98);
+}
 
-  &.ws-search-banner .title,
-  &.new-user-quiz-card .title,
-  &.ws-subscriber-card .title {
-    color: #ccc;
-  }
+.material-album-container.material-container,
+.material-detail-view .artist-details,
+.material-container-details,
+.material-container-details .info {
+  background-color: rgba($color-dark, .8) !important;
+  color: $color-lightest;
+}
+
+.material-detail-view .artist-details .bio-wrapper .bio {
+  color: $color-lightrey;
+}
+
+.material-detail-view .material-container-details .info .description {
+  color: #a1a1a1;
+}
+
+.material .song-table .header-row th {
+  background: transparent !important;
+  border-bottom: 1px solid $color-darkalt;
+  height: 26px;
+  text-transform: none;
+  color: $color-middleground;
+  border-left: 0 solid $color-darkgrey;
+}
+
+.material .song-row .song-indicator {
+  filter: invert(100%);
+  background-color: transparent !important;
+}
+
+.material .song-row td {
+  border: 0;
+  color: $color-lightest;
+  font-weight: 300;
+  cursor: default;
+  background-color: transparent !important;
+  border-bottom: 1px solid $color-darkalt;
+}
+
+.material .song-table [data-col="title"],
+.material .song-table.mini [data-col="song-details"] .song-title {
+  color: $color-lightest;
+}
+
+.material .song-table .currently-playing [data-col="title"] img,
+.material .song-table.mini .currently-playing [data-col="song-details"] img {
+  visibility: hidden;
+}
+
+.material .song-table [data-col="duration"],
+.material .song-table [data-col="play-count"] {
+  color: #707070;
+}
+
+.material .song-row.hover td {
+  background-color: $color-darkalt !important;
+}
+
+.material .song-row.selected-song-row td,
+.material-detail-view .song-table .song-row.selected-song-row td,
+.material-detail-view .song-table .song-row.selected-song-row .column-content {
+  color: $color-lightest !important;
+  background-color: $color-darkalt !important;
+}
+
+.material .song-row.currently-playing td {
+  color: $color-hilight !important;
+}
+
+.material .song-table [data-col="index"] .content,
+.material .song-table [data-col="track"] .content {
+  color: inherit;
+}
+
+.material .song-row.currently-playing td[data-col="track"] span,
+.material .song-row.currently-playing td[data-col="index"] span {
+  visibility: collapse;
+}
+
+.material .song-row.currently-playing td[data-col="track"] span > div,
+.material .song-row.currently-playing td[data-col="index"] span > div {
+  visibility: visible;
+}
+
+.material .song-row.hover [data-col="index"] .content,
+.material .song-row.hover [data-col="track"] .content {
+  color: transparent !important;
+}
+
+.material .song-row .title-right-items {
+  background-color: transparent !important;
+}
+
+.hover-button[data-id="play"],
+.material .song-row .rating-container.thumbs [data-rating] {
+  cursor: pointer;
+  color: $color-lightest;
+}
+
+.music-banner {
+  display: none;
+}
+
+.subcategories-list li:hover a,
+.subcategories-list li:focus a {
+  background-color: $color-darksteady;
+}
+
+.subcategories-list li .li-content {
+  border-color: $color-darksteady !important;
 }
 
 #nav,
 #nav-container,
 .material .nav-toolbar {
-  background-color: $color-darkgrey !important;
-  border-right: 1px solid #292929;
+  background-color: $color-darkalt !important;
+  border-right: 1px solid $color-darksteadyalt;
 }
 
 #nav-container #dropShadow {
   display: none;
 }
 
-#nav_collections .nav-item-container:focus {
+.material #nav_collections .nav-item-container,
+.material .nav-item-container {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #949599 !important;
+  padding: 0;
+  border-left: 3px solid transparent;
+}
+
+.material #nav_collections .nav-item-container.selected,
+.material .nav-item-container.selected,
+.material .nav-item-container.selected:focus,
+.material .nav-item-container.selected:hover {
+  background: #2e2f33 !important;
+  color: #f7f9ff !important;
+  border-left: 3px solid #ff7d00;
+}
+
+.material #nav_collections .nav-item-container:hover,
+.material .nav-item-container:hover {
+  background: #2e2f33 !important;
+  color: #f7f9ff !important;
+}
+
+#nav_collections .nav-item-container:focus,
+.nav-item-container:focus,
+.nav-item-container:hover {
   background-color: transparent;
 }
 
-.nav-item-container {
-  &:focus,
-  &:hover {
-    background-color: transparent;
-  }
-
-  .playlistDropDown,
-  &.selected .playlistDropDown {
-    margin-top: 3px !important;
-  }
+.material .nav-section-header {
+  padding-left: 16px;
+  font-weight: 300;
+  color: #777;
+  text-shadow: 0 -1px 0 $color-darksteady;
+  text-transform: uppercase;
+  height: 34px;
+  line-height: 34px;
 }
 
 .nav-section-divider {
   display: none;
 }
 
+.nav-item-container .playlistDropDown,
+.nav-item-container.selected .playlistDropDown {
+  margin-top: 3px !important;
+}
+
+// Navigation bar
 .nav-bar {
-  background-color: #121314;
+  background-color: $color-darker;
 
   .header-tab-title {
     height: 42px;
     line-height: 45px;
-    color: #aaa;
+    color: $color-greydark;
     font-weight: 500;
     text-transform: uppercase;
     font-size: 12px;
@@ -430,18 +484,19 @@ a,
     &.selected {
       border-bottom: 3px solid #ff7d00 !important;
       background-color: transparent;
-      color: #fff;
+      color: $color-lightest;
 
       &:hover {
-        color: #fff;
+        color: $color-lightest;
       }
     }
 
     &:hover {
-      color: #fff;
+      color: $color-lightest;
     }
   }
 
+  // .header-tab-title
   .header-tab-spacer {
     display: none;
   }
@@ -452,67 +507,26 @@ a,
 }
 
 #headerBar {
-  background-color: #121314;
-  border-bottom: 1px solid $color-darkgrey;
+  background-color: $color-darker;
+  border-bottom: 1px solid $color-darkalt;
 }
 
 .read-more-button-wrapper.fade-out {
-  background: #121314;
+  background: $color-darker;
 }
 
 .fade-out:after {
-  background: linear-gradient(to right, rgba(34, 35, 38, 0), rgba(34, 35, 38, 1)) !important;
+  background: linear-gradient(to right, rgba($color-darkalt, 0), rgba($color-darkalt, 1)) !important;
+  display: none !important;
 }
 
-// Player
-[class*="sj-play-button"] #pulse {
-  background-color: rgba(255, 87, 34, 0.4) !important;
-}
-
-[class*="sj-play-button"] #buttonContent {
-  background: #ff5722 !important;
-}
-
-.primary:not([style-scope]):not(.style-scope) {
-  color: #ff5722 !important;
-}
-
-#player {
-  background: $color-grey;
-  color: #fff;
-  box-shadow: none !important;
-
-  &.active:hover .playing-progress-background {
-    background: #555;
-  }
-
-  .flat-button {
-    background-color: transparent !important;
-
-    &:hover,
-    &:active {
-      background-color: transparent !important;
-    }
-  }
-
-  &:not(.material) [data-id="now-playing-menu"] {
-    border: 0;
-  }
-
-  &.material {
-    .player-rating-container {
-      background-color: transparent;
-    }
-
-    .now-playing-actions paper-icon-button {
-      color: #fff;
-    }
-  }
+#player,
+.player-middle {
+  background: $color-darkalt;
+  color: $color-lightest;
 }
 
 .player-middle {
-  background: $color-darkgrey;
-  color: #fff;
   padding: 3px 0 0;
   margin: 0;
 }
@@ -525,18 +539,43 @@ a,
   }
 }
 
+#player .flat-button,
+#player .flat-button:hover,
+#player .flat-button:active {
+  background-color: transparent !important;
+}
+
 .now-playing-menu-wrapper {
   background: none;
 }
 
+#player:not(.material) [data-id="now-playing-menu"] {
+  border: 0;
+}
+
+#player.material .player-rating-container {
+  background-color: transparent;
+}
+
+#player.material .now-playing-actions paper-icon-button {
+  color: $color-lightest;
+}
+
 #playerSongTitle {
-  color: #ddd;
+  color: $color-lightrey;
 }
 
 #player-artist,
 .player-album,
-.player-dash {
-  color: #aaa;
+.player-dash,
+.sj-card-0 .card-title,
+.sj-card .card-title,
+.card-title {
+  color: $color-greydark !important;
+}
+
+#player.active:hover .playing-progress-background {
+  background: $color-darkgrey;
 }
 
 #top_divider_line,
@@ -544,22 +583,24 @@ a,
   background: #333;
 }
 
-#time_container_duration {
-  color: #ccc;
-  background-color: #555;
+#material-player-left-wrapper {
+  height: 90px;
+  margin-top: 0;
 }
 
-#volume {
-  &:hover,
-  &.simulated-hover {
-    background: none !important;
-  }
+#time_container_duration {
+  color: #ccc;
+}
 
-  #vslider,
-  #volume_low,
-  #volume_high {
-    opacity: 1 !important;
-  }
+#volume:hover,
+#volume.simulated-hover {
+  background: none !important;
+}
+
+#volume #vslider,
+#volume #volume_low,
+#volume #volume_high {
+  opacity: 1 !important;
 }
 
 .suggested-query {
@@ -570,6 +611,10 @@ a,
   border-top-color: transparent;
 }
 
+.material a,
+.material .simple-dialog a {
+  color: $color-greydark;
+}
 
 div.simple-dialog-bg {
   opacity: .01 !important;
@@ -581,10 +626,10 @@ div.simple-dialog-bg {
   animation-name: slidedown;
   animation-timing-function: ease-out;
   overflow: hidden;
-  top: 60 !important;
+  top: 60px !important;
   border-radius: 0 0 5px 5px;
   border-top-width: 0;
-  background-color: rgba(240, 240, 240, .98);
+  background-color: rgba(#f0f0f0, .98);
 }
 
 @keyframes slidedown {
@@ -619,109 +664,79 @@ div.simple-dialog-bg {
   filter: brightness(-20%);
 }
 
-.now-playing-menu {
-  .goog-menuitem {
-    background: #2e2f33;
-  }
-
-  .goog-submenu {
-    background: #2e2f33;
-
-    .goog-submenu-arrow {
-      background: #2e2f33;
-    }
-  }
-}
-
+.now-playing-menu .goog-menuitem,
+.now-playing-menu .goog-submenu,
+.now-playing-menu .goog-submenu .goog-submenu-arrow,
 .goog-menuitem,
 .goog-menu {
   background: #2e2f33;
 }
 
-::-webkit-scrollbar {
-  background-color: $color-darkgrey;
+.material-card .details .menu-anchor {
+  color: $color-lightest;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #000;
-  border: .25em solid $color-darkgrey;
+.material-card[data-size="small"][data-type="imfl"] .title {
+  color: $color-lightest;
+}
+
+::scrollbar {
+  background-color: $color-darkalt;
+}
+
+::scrollbar-thumb {
+  background-color: $color-darkest;
+  border: .25em solid $color-darkalt;
 }
 
 // Fill to highlight thumbed up/down track in status bar
-paper-icon-button {
-  &[aria-label="Undo thumb-up"] iron-icon {
-    display: inline-block;
-  }
+paper-icon-button[aria-label="Undo thumb-up"] iron-icon {
+  display: inline-block;
+}
 
-  &[aria-label="Undo thumb-down"] iron-icon {
-    display: inline-block;
-  }
+paper-icon-button[aria-label="Undo thumb-down"] iron-icon {
+  display: inline-block;
 }
 
 // New drawer / other additions
-[class*="sj-play-button"] {
-  #pulse {
-    background-color: rgba(255, 87, 34, .4) !important;
-  }
+[class*="sj-play-button"] #pulse {
+  background-color: rgba(#ff5722, .4) !important;
+}
 
-  #buttonContent {
-    background: #ff5722 !important;
-  }
+[class*="sj-play-button"] #buttonContent {
+  background: #ff5722 !important;
 }
 
 .primary:not([style-scope]):not(.style-scope) {
   color: #ff5722 !important;
 }
 
-#music-content .info-card {
-  background: $color-darkgrey !important;
+// Make drawer slimmer
+#drawer {
+  width: 240px !important;
 
-  * {
-    color: rgb(193, 193, 193) !important;
+  .music-logo-link {
+    visibility: visible;
+    background-image: url('https://dl.dropboxusercontent.com/u/18447700/play_music.svg');
+    background-position: center 4px;
+    background-size: 90% auto;
   }
 }
 
-#playlist-drawer {
-  .autoplaylist-section,
-  #recent-playlists-container,
-  paper-header-panel[at-top] paper-toolbar:not([style-scope]):not(.style-scope) {
-    border-color: #333439 !important;
-  }
+#music-content .info-card,
+#playlist-drawer .sj-right-drawer,
+#playlist-drawer .sj-right-drawer #topBar {
+  background: $color-darkalt !important;
+}
 
-  .playlist-drawer-item {
-    .playlist-wrapper {
-      &:hover,
-      &:focus {
-        background-color: #2e2f33 !important;
-        color: #fff !important;
-      }
-    }
-
-    sj-play-button:hover ~ .playlist-wrapper,
-    iron-icon:hover ~ .playlist-wrapper,
-    &.playlist-drop-target:not(.subscribed) .playlist-wrapper {
-      background-color: #2e2f33 !important;
-      color: #fff !important;
-    }
-  }
-
-  .sj-right-drawer {
-    background: $color-darkgrey !important;
-
-    .sj-right-drawer #dropShadow {
-      display: none;
-    }
-
-    #topBar {
-      background: $color-darkgrey !important;
-    }
-  }
+#music-content .info-card * {
+  color: rgb(193, 193, 193) !important;
 }
 
 .share-buttons .button-label,
 #checkboxLabel,
 #playlist-drawer .sj-right-drawer #topBar {
-  color: #fff !important;
+  color: $color-lightest !important;
 }
 
 .column .material-card[data-size="small"][data-type="imfl"] .title {
@@ -729,35 +744,39 @@ paper-icon-button {
 }
 
 [class*="paper-dialog"] {
-  color: #fff !important;
-  background: $color-darkgrey !important;
+  color: $color-lightest !important;
+  background: $color-darkalt !important;
 
-  [class*="paper-input-container"] .input-content {
-    &.paper-input-container {
-      input,
-      textarea {
-        color: #fff !important;
+  [class*="paper-input-container"] {
+    .input-content {
+      &.paper-input-container {
+        input,
+        textarea,
+        iron-autogrow-textarea,
+        .paper-input-input {
+          color: $color-lightest !important;
+        }
       }
 
-      .paper-input-input {
-        color: #fff !important;
+      &:not(.label-is-highlighted) {
+        &.paper-input-container {
+          label,
+          .paper-input-label {
+            color: $color-lightest !important;
+          }
+        }
       }
-    }
-
-    &:not(.label-is-highlighted).paper-input-container {
-      label,
-      .paper-input-label [class*="paper-dialog"] [class*="paper-input-container"] .input-content.paper-input-container iron-autogrow-textarea {
-        color: #fff !important;
-      }
-    }
+    } // .input-content
   }
 }
 
-paper-dialog {
-  input::selection,
-  textarea::selection {
-    background-color: rgba(255, 87, 34, .25) !important;
-  }
+#playlist-drawer .sj-right-drawer #dropShadow {
+  display: none;
+}
+
+paper-dialog input::selection,
+paper-dialog textarea::selection {
+  background-color: rgba(#ff5722, .25) !important;
 }
 
 [class*="paper-button"][disabled],
@@ -769,8 +788,20 @@ paper-dialog-scrollable.can-scroll:not([style-scope]):not(.style-scope):not(.scr
 .share-buttons,
 gpm-action-buttons,
 .my-devices-card .device-list-item:not(:last-child),
-.labs-card .lab-list-item:not(:last-child) {
+.labs-card .lab-list-item:not(:last-child),
+#playlist-drawer .autoplaylist-section,
+#playlist-drawer #recent-playlists-container,
+#playlist-drawer paper-header-panel[at-top] paper-toolbar:not([style-scope]):not(.style-scope) {
   border-color: #333439 !important;
+}
+
+#playlist-drawer .playlist-drawer-item .playlist-wrapper:hover,
+#playlist-drawer .playlist-drawer-item .playlist-wrapper:focus,
+#playlist-drawer .playlist-drawer-item sj-play-button:hover ~ .playlist-wrapper,
+#playlist-drawer .playlist-drawer-item iron-icon:hover ~ .playlist-wrapper,
+#playlist-drawer .playlist-drawer-item.playlist-drop-target:not(.subscribed) .playlist-wrapper {
+  background-color: #2e2f33 !important;
+  color: $color-lightest !important;
 }
 
 .label-is-highlighted [id*="paper-input-label"],
@@ -808,12 +839,7 @@ paper-button.nav-item-container.sub:focus {
   z-index: 0 !important;
 }
 
-// From spotify-black.css (radiant-player-mac)
-
-.material-album-container.material-container,
-.material-detail-view .artist-details,
-.material-container-details,
-.material-container-details .info {
-  background-color: rgba(18, 19, 20, .8) !important;
-  color: #fff;
+.material .song-row.selected-song-row td,
+.material .song-row.currently-playing td {
+  background-color: $color-darkalt !important;
 }
