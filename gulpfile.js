@@ -88,7 +88,7 @@ gulp.task('styles', function() {
     .pipe(rename('spotify-black.css'))
 
     // Also update Radiant Player CSS:
-    .pipe(gulp.dest('/Applications/Radiant Player.app/Contents/Resources/css/'))
+    // .pipe(gulp.dest('/Applications/Radiant Player.app/Contents/Resources/css/'))
     .pipe(browserSync.stream());
 
 });
