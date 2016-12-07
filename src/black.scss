@@ -716,6 +716,7 @@ paper-icon-button[aria-label="Undo thumb-down"] iron-icon {
   width: 240px !important;
 
   .music-logo-link {
+    // Google Play Music Player:
     visibility: visible;
     background-image: url('https://dl.dropboxusercontent.com/u/18447700/play_music.svg');
     background-repeat: no-repeat;
@@ -723,9 +724,11 @@ paper-icon-button[aria-label="Undo thumb-down"] iron-icon {
     background-size: 190px auto;
     margin-top: 5px;
 
-    svg {
-      visibility: hidden;
-    }
+    // Radiant Player:
+    // visibility: visible;
+    // background-image: url('https://dl.dropboxusercontent.com/u/18447700/play_music.svg');
+    // background-position: center 4px;
+    // background-size: 90% auto;
   }
 }
 
