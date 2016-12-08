@@ -72,6 +72,11 @@ body {
 
 // Playlists
 paper-button {
+
+  &.nav-item-container.sub {
+    padding: 6px !important;
+  }
+
   &#unsubscribe-playlist-button {
     iron-icon {
       &[icon="sj:unsubscribe"] {
@@ -109,6 +114,53 @@ paper-button {
     padding-bottom: 1px;
   }
 
+  .song-row {
+    &.currently-playing td {
+      color: $color-hilight !important;
+    }
+
+    .title-right-items {
+      background-color: transparent !important;
+    }
+
+    [data-col="index"] .hover-button[data-id="play"],
+    [data-col="track"] .hover-button[data-id="play"] {
+      background-image: url('https://radiant-player-mac/sprites-inverted.png') !important;
+    }
+
+    .rating-container.thumbs [data-rating] {
+      filter: invert(100%);
+    }
+
+    .column-content {
+      background-color: transparent !important;
+    }
+
+    &:hover,
+    &:hover td,
+    &:hover .column-content {
+      background-color: $color-darkhover !important;
+    }
+
+    .song-indicator {
+      filter: invert(100%);
+      background-color: transparent !important;
+    }
+
+    td {
+      border: 0;
+      color: $color-lightest;
+      font-weight: 300;
+      cursor: default;
+      background-color: transparent !important;
+      border-bottom: 1px solid $color-darkalt;
+    }
+
+    &.hover td {
+      background-color: $color-darkalt !important;
+    }
+  } // .song-row
+
   .section-header,
   .recommended-header,
   .cluster .cluster-title {
@@ -118,25 +170,84 @@ paper-button {
   // Song table
   .song-table {
     padding: 0;
+
+    .header-row th {
+      background: transparent !important;
+      border-bottom: 1px solid $color-darkalt;
+      height: 26px;
+      text-transform: none;
+      color: $color-middleground;
+      border-left: 0 solid $color-darkgrey;
+    }
   }
 
-  .song-row [data-col="index"] .hover-button[data-id="play"],
-  .song-row [data-col="track"] .hover-button[data-id="play"] {
-    background-image: url('https://radiant-player-mac/sprites-inverted.png') !important;
+  song-table [data-col="title"],
+  .song-table.mini [data-col="song-details"] .song-title {
+    color: $color-lightest;
   }
 
-  .song-row .rating-container.thumbs [data-rating] {
-    filter: invert(100%);
+  .song-table .currently-playing [data-col="title"] img,
+  .song-table.mini .currently-playing [data-col="song-details"] img {
+    visibility: hidden;
   }
 
-  .song-row .column-content {
-    background-color: transparent !important;
+  .song-table [data-col="duration"],
+  .song-table [data-col="play-count"] {
+    color: #707070;
   }
 
-  .song-row:hover,
-  .song-row:hover td,
-  .song-row:hover .column-content {
-    background-color: $color-darkhover !important;
+  .nav-section-header {
+    padding-left: 16px;
+    font-weight: 300;
+    color: #777;
+    text-shadow: 0 -1px 0 $color-darksteady;
+    text-transform: uppercase;
+    height: 34px;
+    line-height: 34px;
+  }
+
+  // Right click menu
+  .goog-menuheader {
+    color: $color-greydark !important;
+  }
+
+  .goog-menu,
+  .now-playing-menu {
+    background: $color-darkbetween-alt;
+
+    .goog-submenu {
+      background: $color-darkbetween-alt;
+
+      .goog-submenu-arrow {
+        background: $color-darkbetween-alt;
+      }
+    }
+
+    .goog-menuseparator {
+      background-color: $color-darkbetween !important;
+    }
+
+    .goog-menuitem {
+      background: $color-darkbetween-alt;
+      color: $color-almostwhite !important;
+
+      &:hover {
+        background: $color-semidark;
+        color: $color-almostwhite !important;
+
+        .goog-menuitem-content {
+          color: $color-almostwhite !important;
+        }
+      }
+
+      .goog-menuitem-content {
+        color: $color-middleground !important;
+      }
+
+      .rating-container paper-icon-button {
+        color: $color-lightest;
+      }
+    }
   }
 } // .material
 
@@ -206,6 +317,10 @@ a,
     padding: 16px;
     position: relative;
 
+    .menu-anchor {
+      color: $color-lightest;
+    }
+
     paper-icon-button.menu-anchor {
       color: $color-lightest !important;
     }
@@ -247,6 +362,10 @@ a,
       color: #ccc;
     }
   }
+
+  .info-card * {
+    color: rgb(193, 193, 193) !important;
+  }
 } // #music-content
 
 .material-container,
@@ -283,57 +402,11 @@ a,
   color: #a1a1a1;
 }
 
-.material .song-table .header-row th {
-  background: transparent !important;
-  border-bottom: 1px solid $color-darkalt;
-  height: 26px;
-  text-transform: none;
-  color: $color-middleground;
-  border-left: 0 solid $color-darkgrey;
-}
-
-.material .song-row .song-indicator {
-  filter: invert(100%);
-  background-color: transparent !important;
-}
-
-.material .song-row td {
-  border: 0;
-  color: $color-lightest;
-  font-weight: 300;
-  cursor: default;
-  background-color: transparent !important;
-  border-bottom: 1px solid $color-darkalt;
-}
-
-.material .song-table [data-col="title"],
-.material .song-table.mini [data-col="song-details"] .song-title {
-  color: $color-lightest;
-}
-
-.material .song-table .currently-playing [data-col="title"] img,
-.material .song-table.mini .currently-playing [data-col="song-details"] img {
-  visibility: hidden;
-}
-
-.material .song-table [data-col="duration"],
-.material .song-table [data-col="play-count"] {
-  color: #707070;
-}
-
-.material .song-row.hover td {
-  background-color: $color-darkalt !important;
-}
-
 .material .song-row.selected-song-row td,
 .material-detail-view .song-table .song-row.selected-song-row td,
 .material-detail-view .song-table .song-row.selected-song-row .column-content {
   color: $color-lightest !important;
   background-color: $color-darkalt !important;
-}
-
-.material .song-row.currently-playing td {
-  color: $color-hilight !important;
 }
 
 .material .song-table [data-col="index"] .content,
@@ -354,10 +427,6 @@ a,
 .material .song-row.hover [data-col="index"] .content,
 .material .song-row.hover [data-col="track"] .content {
   color: transparent !important;
-}
-
-.material .song-row .title-right-items {
-  background-color: transparent !important;
 }
 
 .hover-button[data-id="play"],
@@ -418,16 +487,6 @@ a,
 .nav-item-container:focus,
 .nav-item-container:hover {
   background-color: transparent;
-}
-
-.material .nav-section-header {
-  padding-left: 16px;
-  font-weight: 300;
-  color: #777;
-  text-shadow: 0 -1px 0 $color-darksteady;
-  text-transform: uppercase;
-  height: 34px;
-  line-height: 34px;
 }
 
 .nav-section-divider {
@@ -644,10 +703,6 @@ div.simple-dialog-bg {
   background: $color-darkbetween-alt;
 }
 
-.material-card .details .menu-anchor {
-  color: $color-lightest;
-}
-
 .material-card[data-size="small"][data-type="imfl"] .title {
   color: $color-lightest;
 }
@@ -708,10 +763,6 @@ paper-icon-button[aria-label="Undo thumb-down"] iron-icon {
 #playlist-drawer .sj-right-drawer,
 #playlist-drawer .sj-right-drawer #topBar {
   background: $color-darkalt !important;
-}
-
-#music-content .info-card * {
-  color: rgb(193, 193, 193) !important;
 }
 
 .share-buttons .button-label,
@@ -799,10 +850,6 @@ gpm-action-buttons,
   background: transparent !important;
 }
 
-paper-button.nav-item-container.sub {
-  padding: 6px !important;
-}
-
 .ups paper-button,
 .ad-preroll-message-link paper-button,
 paper-button.nav-item-container.sub {
@@ -823,51 +870,4 @@ paper-button.nav-item-container.sub:focus {
 .material .song-row.selected-song-row td,
 .material .song-row.currently-playing td {
   background-color: $color-darkalt !important;
-}
-
-// Right click menu
-.material {
-
-  .goog-menuheader {
-    color: $color-greydark !important;
-  }
-
-  .goog-menu,
-  .now-playing-menu {
-    background: $color-darkbetween-alt;
-
-    .goog-submenu {
-      background: $color-darkbetween-alt;
-
-      .goog-submenu-arrow {
-        background: $color-darkbetween-alt;
-      }
-    }
-
-    .goog-menuseparator {
-      background-color: $color-darkbetween !important;
-    }
-
-    .goog-menuitem {
-      background: $color-darkbetween-alt;
-      color: $color-almostwhite !important;
-
-      &:hover {
-        background: $color-semidark;
-        color: $color-almostwhite !important;
-
-        .goog-menuitem-content {
-          color: $color-almostwhite !important;
-        }
-      }
-
-      .goog-menuitem-content {
-        color: $color-middleground !important;
-      }
-
-      .rating-container paper-icon-button {
-        color: $color-lightest;
-      }
-    }
-  }
 }
