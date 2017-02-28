@@ -292,6 +292,11 @@ a,
   background-color: rgba($color-darkalt, .8) !important;
 }
 
+// Non-subscribed title color
+#details.sj-card > [slot="title"] {
+  color: #444 !important;
+}
+
 .material-card {
   .title {
     color: $color-lightrey;
