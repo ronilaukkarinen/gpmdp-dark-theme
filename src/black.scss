@@ -36,14 +36,7 @@ body {
         }
       }
     }
-  }
-
-  // Search bar svg color correction
-  .material-one-middle {
-    svg {
-      fill: #ccc;
-    }
-  }
+  }  
 
   &.material,
   #material-app-bar,
@@ -76,6 +69,13 @@ body {
     }
   }
 } // body
+
+// Search bar svg color correction
+#material-one-middle {
+  svg {
+    fill: #ccc;
+  }
+}
 
 // Playlists
 paper-button {
