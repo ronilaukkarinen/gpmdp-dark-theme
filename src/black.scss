@@ -38,6 +38,13 @@ body {
     }
   }
 
+  // Search bar svg color correction
+  .material-one-middle {
+    svg {
+      fill: #ccc;
+    }
+  }
+
   &.material,
   #material-app-bar,
   #music-content.material .material-cover {
@@ -292,9 +299,17 @@ a,
   background-color: rgba($color-darkalt, .8) !important;
 }
 
-// Non-subscribed title color
-#details.sj-card > [slot="title"] {
-  color: #444 !important;
+// Non-subscribed title colors
+#details.sj-card {
+  // Album title
+  > [slot="title"] {
+    color: #666 !important;
+  }
+
+  // Artist title
+  > [slot="subtitle"] {
+    color: #444 !important;
+  }
 }
 
 .material-card {
