@@ -85,7 +85,6 @@ gulp.task('styles', function() {
         console.log('[clean-css] Compression efficiency: ' + details.stats.efficiency * 100 + ' %');
     }))
     .pipe(gulp.dest('./'))
-    .pipe(rename('spotify-black.css'))
 
     // Also update Radiant Player CSS:
     // .pipe(gulp.dest('/Applications/Radiant Player.app/Contents/Resources/css/'))

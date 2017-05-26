@@ -5,7 +5,6 @@
 // Custom stylesheet that emulates the appearance of the Spotify black redesign.
 // Originally created by Anthony Barone.
 // Sassified, linted and improved by Roni Laukkarinen.
-
 $color-darkest: #000;
 $color-dark: #131214;
 $color-darker: #121314;
@@ -36,7 +35,7 @@ body {
         }
       }
     }
-  }  
+  }
 
   &.material,
   #material-app-bar,
@@ -68,6 +67,20 @@ body {
       background-image: url('https://dl.dropboxusercontent.com/u/18447700/play_music.svg');
     }
   }
+
+  div.gpm-detail-page-header > [slot="title"] {
+    color: #fff !important;
+  }
+
+  div.gpm-detail-page-header > [slot="subtitle"], 
+  div.gpm-detail-page-header > [slot="description"], 
+  div.gpm-detail-page-header > [slot="metadata"] {
+    color: rgba(#fff, .5) !important;
+  }
+
+  div.gpm-detail-page-header > [slot="buttons"] {
+    color: #ccc !important;
+  }
 } // body
 
 // Search bar svg color correction
@@ -79,7 +92,6 @@ body {
 
 // Playlists
 paper-button {
-
   &.nav-item-container.sub {
     padding: 6px !important;
   }
