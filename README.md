@@ -2,15 +2,15 @@
 
 Spotify-like theme for [Google Play Music Desktop Player](https://github.com/MarshallOfSound/Google-Play-Music-Desktop-Player-UNOFFICIAL-) and [Radiant Player](https://github.com/radiant-player/radiant-player-mac).
 
-![Screenshot](https://dl.dropboxusercontent.com/u/18447700/gpmp-1.png "Screenshot")
+![Screenshot](https://rolle.wtf/gpmp-1.png "Screenshot")
 
-![Screenshot](https://dl.dropboxusercontent.com/u/18447700/gpmp-2.png "Screenshot")
+![Screenshot](https://rolle.wtf/gpmp-2.png "Screenshot")
 
-![Screenshot](https://dl.dropboxusercontent.com/u/18447700/gpmp-3.png "Screenshot")
+![Screenshot](https://rolle.wtf/gpmp-3.png "Screenshot")
 
-![Screenshot](https://dl.dropboxusercontent.com/u/18447700/gpmp-4.png "Screenshot")
+![Screenshot](https://rolle.wtf/gpmp-4.png "Screenshot")
 
-![Screenshot](https://dl.dropboxusercontent.com/u/18447700/gpmp-5.png "Screenshot")
+![Screenshot](https://rolle.wtf/gpmp-5.png "Screenshot")
 
 ### Usage
 
